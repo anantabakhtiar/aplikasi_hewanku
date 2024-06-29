@@ -1,0 +1,1 @@
+ C:\\flutter_project\\aplikasi_hewanku\\.dart_tool\\flutter_build\\866c2ce0ec630e40359f92c5f092cbf5\\native_assets.yaml: 
