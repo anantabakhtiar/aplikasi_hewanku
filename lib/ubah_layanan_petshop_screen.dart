@@ -1,13 +1,37 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:numberpicker/numberpicker.dart';
 
 var jam = 0;
 var menit = 0;
 
-class UbahLayananPetshopScreen extends StatelessWidget {
+class UbahLayananPetshopScreen extends StatefulWidget {
   const UbahLayananPetshopScreen({super.key});
+
+  @override
+  State<UbahLayananPetshopScreen> createState() =>
+      _UbahLayananPetshopScreenState();
+}
+
+class _UbahLayananPetshopScreenState extends State<UbahLayananPetshopScreen> {
+  // ignore: unused_field
+  File? _image;
+  final picker = ImagePicker();
+  Future getImage() async {
+    final pickedImage = await picker.pickImage(source: ImageSource.gallery);
+    setState(() {
+      if (pickedImage != null) {
+        _image = File(pickedImage.path);
+      } else {
+        // ignore: avoid_print
+        print("Tidak ada gambar terpilih");
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +41,7 @@ class UbahLayananPetshopScreen extends StatelessWidget {
         leading: IconButton(
           color: Colors.white,
           onPressed: () {
-            Navigator.pushNamed(
-                context, '/detailLayananPetshopPenyediaScreen');
+            Navigator.pushNamed(context, '/detailLayananPetshopPenyediaScreen');
           },
           icon: const Icon(
             CupertinoIcons.chevron_back,
@@ -631,7 +654,7 @@ class UbahLayananPetshopScreen extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(10),
                       child: InkWell(
-                        onTap: () {},
+                        onTap: getImage,
                         child: Container(
                           height: 50,
                           decoration: BoxDecoration(

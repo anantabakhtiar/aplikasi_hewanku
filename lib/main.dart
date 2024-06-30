@@ -37,6 +37,8 @@ import 'package:aplikasi_hewanku/edit_password_penyedia_screen.dart';
 import 'package:aplikasi_hewanku/edit_password_screen.dart';
 import 'package:aplikasi_hewanku/edit_profil_penyedia_screen.dart';
 import 'package:aplikasi_hewanku/edit_profil_screen.dart';
+import 'package:aplikasi_hewanku/lupa_password_penyedia_screen.dart';
+import 'package:aplikasi_hewanku/lupa_password_screen.dart';
 import 'package:aplikasi_hewanku/masuk_user_screen.dart';
 import 'package:aplikasi_hewanku/pesan_dan_darurat_screen.dart';
 import 'package:aplikasi_hewanku/pre_screen_two.dart';
@@ -67,7 +69,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
-      routes: {
+      routes: <String, WidgetBuilder>{
         '/': (context) => const PreScreenOne(),
         '/preScreenTwo': (context) => const PreScreenTwo(),
         '/daftarUserScreen': (context) => const DaftarUserScreen(),
@@ -160,6 +162,9 @@ class MainApp extends StatelessWidget {
             const ChatLayananKecantikanScreen(),
         '/chatLayananPetshopScreen': (context) =>
             const ChatLayananPetshopScreen(),
+        '/lupaPasswordScreen': (context) => const LupaPasswordScreen(),
+        '/lupaPasswordPenyediaScreen': (context) =>
+            const LupaPasswordPenyediaScreen(),
       },
     );
   }

@@ -1,10 +1,32 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:image_picker/image_picker.dart';
 
-class DetailLayananPethelpPenyediaScreen extends StatelessWidget {
+class DetailLayananPethelpPenyediaScreen extends StatefulWidget {
   const DetailLayananPethelpPenyediaScreen({super.key});
 
+  @override
+  State<DetailLayananPethelpPenyediaScreen> createState() => _DetailLayananPethelpPenyediaScreenState();
+}
+
+class _DetailLayananPethelpPenyediaScreenState extends State<DetailLayananPethelpPenyediaScreen> {
+  // ignore: unused_field
+  File? _image;
+  final picker = ImagePicker();
+  Future getImage() async {
+    final pickedImage = await picker.pickImage(source: ImageSource.gallery);
+    setState(() {
+      if (pickedImage != null) {
+        _image = File(pickedImage.path);
+      } else {
+        // ignore: avoid_print
+        print("Tidak ada gambar terpilih");
+      }
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -514,7 +536,7 @@ class DetailLayananPethelpPenyediaScreen extends StatelessWidget {
                                 color: const Color.fromARGB(100, 0, 0, 0),
                               ),
                               suffixIcon: InkWell(
-                                onTap: () {},
+                                onTap: getImage,
                                 child: const Padding(
                                   padding: EdgeInsets.only(left: 20, right: 20),
                                   child: Icon(

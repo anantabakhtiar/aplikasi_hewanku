@@ -14,6 +14,7 @@ dependencies:
   carousel_slider: ^4.2.1
   numberpicker: ^2.1.2
   dropdown_search: ^5.0.6
+  image_picker: ^1.1.2
   flutter_image_slideshow: any
 
 dev_dependencies:

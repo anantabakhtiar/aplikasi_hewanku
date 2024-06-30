@@ -1,10 +1,33 @@
+import 'dart:io';
+
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:image_picker/image_picker.dart';
 
-class TambahProdukScreen extends StatelessWidget {
+class TambahProdukScreen extends StatefulWidget {
   const TambahProdukScreen({super.key});
+
+  @override
+  State<TambahProdukScreen> createState() => _TambahProdukScreenState();
+}
+
+class _TambahProdukScreenState extends State<TambahProdukScreen> {
+  // ignore: unused_field
+  File? _image;
+  final picker = ImagePicker();
+  Future getImage() async {
+    final pickedImage = await picker.pickImage(source: ImageSource.gallery);
+    setState(() {
+      if (pickedImage != null) {
+        _image = File(pickedImage.path);
+      } else {
+        // ignore: avoid_print
+        print("Tidak ada gambar terpilih");
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -267,7 +290,7 @@ class TambahProdukScreen extends StatelessWidget {
                       height: 10,
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: getImage,
                       child: Container(
                         height: 50,
                         decoration: BoxDecoration(

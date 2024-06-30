@@ -214,8 +214,94 @@ class UbahLayananPethelpScreen extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  Navigator.pushNamed(
-                      context, '/daftarLayananPethelpPenyediaScreen');
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          contentPadding: const EdgeInsets.only(
+                              top: 60, bottom: 60, left: 20, right: 20),
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(10),
+                            ),
+                            side:
+                                BorderSide(width: 2, color: Colors.blueAccent),
+                          ),
+                          content: Text(
+                            'Ingin Menghapus Layanan?',
+                            style: GoogleFonts.poppins(
+                                fontSize: 14, fontWeight: FontWeight.w700),
+                            textAlign: TextAlign.center,
+                          ),
+                          actions: <Widget>[
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                InkWell(
+                                  onTap: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: Container(
+                                    width: 120,
+                                    height: 50,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      border: Border.all(
+                                        width: 2,
+                                        color: const Color.fromRGBO(
+                                            200, 29, 37, 100),
+                                      ),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        'No',
+                                        style: GoogleFonts.poppins(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w700,
+                                          color: const Color.fromRGBO(
+                                              200, 29, 37, 100),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 20,
+                                ),
+                                InkWell(
+                                  onTap: () {
+                                    Navigator.pushNamed(context,
+                                        '/daftarLayananPethelpPenyediaScreen');
+                                  },
+                                  child: Container(
+                                    width: 120,
+                                    height: 50,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      border: Border.all(
+                                        width: 2,
+                                        color: const Color.fromRGBO(
+                                            41, 191, 18, 100),
+                                      ),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        'Yes',
+                                        style: GoogleFonts.poppins(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w700,
+                                          color: const Color.fromRGBO(
+                                              41, 191, 18, 100),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        );
+                      });
                 },
                 child: Container(
                   height: 50,

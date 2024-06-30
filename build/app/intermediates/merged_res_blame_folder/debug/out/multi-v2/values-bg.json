@@ -1,16 +1,16 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.aplikasi_hewanku.app-mergeDebugResources-9:/values-bg/values-bg.xml",
+            "outputFile": "com.example.aplikasi_hewanku.app-mergeDebugResources-20:/values-bg/values-bg.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Anant\\.gradle\\caches\\transforms-3\\a7aca2bb4bc61c0afcc2ddea558dc7c6\\transformed\\core-1.6.0\\res\\values-bg\\values-bg.xml",
+                    "source": "C:\\Users\\Anant\\.gradle\\caches\\transforms-3\\9a794953f3a76da667f231c1fc30a68f\\transformed\\core-1.10.1\\res\\values-bg\\values-bg.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,152,262,364,465,572,677,796",
+                        "endColumns": "96,109,101,100,106,104,118,100",
+                        "endOffsets": "147,257,359,460,567,672,791,892"
                     }
                 }
             ]

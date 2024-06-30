@@ -1,9 +1,32 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:image_picker/image_picker.dart';
 
-class DetailPesanScreen extends StatelessWidget {
+class DetailPesanScreen extends StatefulWidget {
   const DetailPesanScreen({super.key});
+
+  @override
+  State<DetailPesanScreen> createState() => _DetailPesanScreenState();
+}
+
+class _DetailPesanScreenState extends State<DetailPesanScreen> {
+  // ignore: unused_field
+  File? _image;
+  final picker = ImagePicker();
+  Future getImage() async {
+    final pickedImage = await picker.pickImage(source: ImageSource.gallery);
+    setState(() {
+      if (pickedImage != null) {
+        _image = File(pickedImage.path);
+      } else {
+        // ignore: avoid_print
+        print("Tidak ada gambar terpilih");
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -341,7 +364,7 @@ class DetailPesanScreen extends StatelessWidget {
                                 color: const Color.fromARGB(100, 0, 0, 0),
                               ),
                               suffixIcon: InkWell(
-                                onTap: () {},
+                                onTap: getImage,
                                 child: const Padding(
                                   padding: EdgeInsets.only(left: 20, right: 20),
                                   child: Icon(

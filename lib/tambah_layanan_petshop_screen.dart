@@ -1,13 +1,38 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:numberpicker/numberpicker.dart';
 
 var jam = 0;
 var menit = 0;
 
-class TambahLayananPetshopScreen extends StatelessWidget {
+class TambahLayananPetshopScreen extends StatefulWidget {
   const TambahLayananPetshopScreen({super.key});
+
+  @override
+  State<TambahLayananPetshopScreen> createState() =>
+      _TambahLayananPetshopScreenState();
+}
+
+class _TambahLayananPetshopScreenState
+    extends State<TambahLayananPetshopScreen> {
+  // ignore: unused_field
+  File? _image;
+  final picker = ImagePicker();
+  Future getImage() async {
+    final pickedImage = await picker.pickImage(source: ImageSource.gallery);
+    setState(() {
+      if (pickedImage != null) {
+        _image = File(pickedImage.path);
+      } else {
+        // ignore: avoid_print
+        print("Tidak ada gambar terpilih");
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -630,7 +655,7 @@ class TambahLayananPetshopScreen extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(10),
                       child: InkWell(
-                        onTap: () {},
+                        onTap: getImage,
                         child: Container(
                           height: 50,
                           decoration: BoxDecoration(
