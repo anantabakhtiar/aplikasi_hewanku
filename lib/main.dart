@@ -2,6 +2,7 @@ import 'package:aplikasi_hewanku/beranda_pengguna_screen.dart';
 import 'package:aplikasi_hewanku/beranda_penyedia_screen.dart';
 import 'package:aplikasi_hewanku/chat_layanan_kecantikan_screen.dart';
 import 'package:aplikasi_hewanku/chat_layanan_kesehatan_screen.dart';
+import 'package:aplikasi_hewanku/chat_layanan_petshop_screen.dart';
 import 'package:aplikasi_hewanku/daftar_darurat_screen.dart';
 import 'package:aplikasi_hewanku/daftar_layanan_kecantikan_penyedia_screen.dart';
 import 'package:aplikasi_hewanku/daftar_layanan_kecantikan_screen.dart';
@@ -155,8 +156,10 @@ class MainApp extends StatelessWidget {
             const DaftarLayananPetshopTersimpanScreen(),
         '/daftarLayananPethelpTersimpanScreen': (context) =>
             const DaftarLayananPethelpTersimpanScreen(),
-            '/chatLayananKecantikanScreen': (context) =>
+        '/chatLayananKecantikanScreen': (context) =>
             const ChatLayananKecantikanScreen(),
+        '/chatLayananPetshopScreen': (context) =>
+            const ChatLayananPetshopScreen(),
       },
     );
   }

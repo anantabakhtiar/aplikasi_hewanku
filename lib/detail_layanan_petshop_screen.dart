@@ -133,7 +133,10 @@ class _DetailLayananPetshopScreenState
                                       ],
                                     ),
                                     IconButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.pushNamed(context,
+                                            '/chatLayananPetshopScreen');
+                                      },
                                       icon: Image.asset('icons/Chat.png'),
                                     )
                                   ],
