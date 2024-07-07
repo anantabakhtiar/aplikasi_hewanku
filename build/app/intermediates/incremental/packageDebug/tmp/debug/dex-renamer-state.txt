@@ -1,4 +1,4 @@
-#Mon Jul 01 05:14:43 WIB 2024
+#Sun Jul 07 22:45:13 WIB 2024
 base.0=C\:\\flutter_project\\aplikasi_hewanku\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\flutter_project\\aplikasi_hewanku\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
 base.2=C\:\\flutter_project\\aplikasi_hewanku\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
